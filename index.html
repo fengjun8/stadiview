@@ -23,7 +23,7 @@
     <meta name="msapplication-TileColor" content="#05070d" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -53,7 +53,7 @@
     <meta property="og:image" content="https://stadiview.com/logo.svg" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="StadiView - 3D Stadium Seat Preview | stadium view from my seat" />
+    <meta name="twitter:title" content="StadiView - stadium view from my seat-3D Stadium Seat Preview" />
     <meta
       name="twitter:description"
       content="A procedural 3D football stadium seat preview concept by thebuggeddev. Explore thousands of seats and find the perfect view."
@@ -637,6 +637,20 @@
         width: 302px;
         padding: 15px 17px 13px;
       }
+      #camcard .ad-native {
+        max-height: 150px;
+        overflow: hidden;
+        margin: -15px -17px 12px -17px;
+        border-radius: calc(var(--radius) - 3px) calc(var(--radius) - 3px) 0 0;
+        border-bottom: 2.5px solid var(--ink);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #camcard .ad-native > div {
+        max-height: 150px;
+        max-width: 100%;
+      }
       #camcard header {
         display: flex;
         align-items: center;
@@ -750,6 +764,18 @@
         right: auto;
         flex: none;
         pointer-events: auto;
+      }
+
+      #rightcol .ad-banner {
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50px;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
       }
 
       #overview {
@@ -1399,16 +1425,7 @@
 
     <nav>
       <div class="brand">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 2 21 7l-9 5-9-5 9-5Z" fill="#2f9bff" />
-          <path d="M3 12l9 5 9-5" stroke="#39c4ff" stroke-width="1.6" />
-          <path
-            d="M3 17l9 5 9-5"
-            stroke="#39c4ff"
-            stroke-width="1.6"
-            opacity=".5"
-          />
-        </svg>
+        <img src="/logo.svg" alt="StadiView logo" width="26" height="26" />
         StadiView
       </div>
       <div class="nav-links">
@@ -1527,7 +1544,7 @@
         <div class="support-actions">
           <a
             class="support-paypal"
-            href="https://paypal.me/gunalesujata"
+            href="https://www.paypal.me/ifengjun"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1590,6 +1607,10 @@
     </section>
 
     <section id="camcard" class="card" aria-label="Camera controls">
+      <!-- Native Bar Ad -->
+      <div class="ad-native">
+        <div id="container-f05d0a4813540276009663151bf05b67"></div>
+      </div>
       <header>
         <div class="card-title">Camera Controls</div>
         <button class="help" id="cc-help" aria-label="Controls help">?</button>
@@ -1792,6 +1813,20 @@
           >Concept demo · no real ticket sales
         </div>
       </section>
+
+      <!-- 320x50 Banner Ad -->
+      <div class="card ad-banner">
+        <script>
+          atOptions = {
+            'key' : '8aa07430ac3a55e7a019f310e012cb00',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/8aa07430ac3a55e7a019f310e012cb00/invoke.js"></script>
+      </div>
     </div>
 
     <div id="dock" role="toolbar" aria-label="3D view controls">
@@ -1859,6 +1894,9 @@
       <div class="t2" id="tip2">€ pending</div>
     </div>
     <div id="toast" role="status"></div>
+
+    <!-- Native Bar Ad Script -->
+    <script async="async" data-cfasync="false" src="https://pl30428655.effectivecpmnetwork.com/f05d0a4813540276009663151bf05b67/invoke.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
