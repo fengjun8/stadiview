@@ -8,20 +8,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StadiView. Experience every seat</title>
+    <title>StadiView - 3D Stadium Seat Preview | stadium view from my seat</title>
     <meta
       name="description"
-      content="Explore a fully procedural 3D football stadium and preview the match from thousands of individual seats."
+      content="Explore a fully procedural 3D football stadium and preview the match from thousands of individual seats. Interactive stadium seat view finder with real-time 3D rendering."
     />
-    <meta name="author" content="thebuggeddev" />
+    <meta
+      name="keywords"
+      content="stadium seat view, 3D stadium, football stadium preview, seat view finder, ticket seat preview, virtual stadium tour, stadium 3D, seat selection"
+    />
+    <link rel="canonical" href="https://stadiview.com/" />
+
     <meta name="theme-color" content="#05070d" />
+    <meta name="msapplication-TileColor" content="#05070d" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#05070d" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="StadiView. Experience every seat" />
+    <meta property="og:site_name" content="StadiView" />
+    <meta property="og:url" content="https://stadiview.com/" />
+    <meta property="og:title" content="StadiView - 3D Stadium Seat Preview | stadium view from my seat" />
     <meta
       property="og:description"
-      content="A procedural 3D football stadium seat preview concept by thebuggeddev."
+      content="A procedural 3D football stadium seat preview concept by thebuggeddev. Explore thousands of seats and find the perfect view."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://stadiview.com/logo.svg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="StadiView - 3D Stadium Seat Preview | stadium view from my seat" />
+    <meta
+      name="twitter:description"
+      content="A procedural 3D football stadium seat preview concept by thebuggeddev. Explore thousands of seats and find the perfect view."
+    />
+    <meta name="twitter:image" content="https://stadiview.com/logo.svg" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8DXMK6BQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GB8DXMK6BQ');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "StadiView",
+      "url": "https://stadiview.com",
+      "description": "A procedural 3D football stadium seat preview experience. Explore thousands of seats and preview the view before booking.",
+      "applicationCategory": "Multimedia",
+      "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "thebuggeddev",
+        "url": "https://x.com/thebuggeddev"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     <style>
       :root {
         --paper: #f4eee0;
@@ -46,6 +115,17 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
       html,
       body {
@@ -1296,6 +1376,7 @@
     </style>
   </head>
   <body>
+    <h1 class="sr-only">StadiView - 3D Stadium Seat Preview Experience</h1>
     <div id="loader" aria-live="polite">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M12 2 21 7l-9 5-9-5 9-5Z" fill="#2f9bff" />
@@ -1609,7 +1690,7 @@
           </div>
         </div>
         <div class="preview">
-          <img id="p-img" alt="View from the selected seat" />
+          <img id="p-img" alt="View from the selected seat" title="Stadium seat view preview" />
           <div class="ph" id="p-ph">Rendering seat view…</div>
           <div class="pill tl" id="p-score">★ view</div>
           <div class="pill br">360°</div>

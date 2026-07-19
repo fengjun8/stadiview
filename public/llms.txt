@@ -1,0 +1,33 @@
+# StadiView
+
+> A procedural 3D football stadium seat preview experience. Explore a fully procedural 3D football stadium and preview the match from thousands of individual seats.
+
+## Overview
+
+StadiView is an interactive web application that renders a procedurally generated 3D football stadium using Three.js. Users can explore different sections, tiers, blocks, rows, and seats to preview the view from any seat in the stadium before purchasing tickets.
+
+## Key Features
+
+- Fully procedural 3D stadium generation (no imported 3D models)
+- Interactive seat selection with real-time view preview
+- Seat information: Section, Tier, Block, Row, Seat number, and Price
+- Upcoming match display (Argentina vs Spain)
+- Dark-themed neobrutalist design
+- Mobile-responsive layout
+- Accessibility features: ARIA labels, keyboard navigation, reduced-motion support
+
+## Technology
+
+- Three.js r128 for 3D rendering
+- GSAP 3.12.5 for animations
+- Vanilla JavaScript (no framework)
+
+## Pages
+
+- `/` - Main stadium experience page
+
+## Site Info
+
+- Domain: https://stadiview.com
+- Author: thebuggeddev
+- License: PolyForm Noncommercial 1.0.0
