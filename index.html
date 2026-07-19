@@ -1402,7 +1402,7 @@
     </style>
   </head>
   <body>
-    <h1 class="sr-only">StadiView - 3D Stadium Seat Preview Experience</h1>
+    <h1 class="sr-only">StadiView - 3D MetLife Stadium Seat Preview Experience</h1>
     <div id="loader" aria-live="polite">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M12 2 21 7l-9 5-9-5 9-5Z" fill="#2f9bff" />
@@ -1568,7 +1568,7 @@
     </div>
 
     <section id="match" class="card" aria-label="Upcoming match">
-      <div class="eyebrow">INTERNATIONAL FRIENDLY</div>
+      <div class="eyebrow">2026 FIFA WORLD CUP FINAL</div>
       <div class="teams">
         <div class="team">
           <div class="flag arg" role="img" aria-label="Argentina flag"></div>
@@ -1590,7 +1590,7 @@
           >
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M8 3v4M16 3v4M3 10h18" /></svg
-          >Demo fixture <span class="dot">·</span> 8:30 PM
+          >3:00 PM EDT (UTC-4)
         </div>
         <div class="row">
           <svg
@@ -1601,7 +1601,7 @@
           >
             <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" />
             <circle cx="12" cy="10" r="2.6" /></svg
-          >Metropolitano Stadium, Madrid
+          >MetLife Stadium, New Jersey, United States
         </div>
       </div>
     </section>
@@ -3011,9 +3011,9 @@
             let cx = 40;
             const words = [
               "ARGENTINA VS SPAIN",
-              "INTERNATIONAL FRIENDLY",
-              "METROPOLITANO · MADRID",
-              "KICK OFF 8.30 PM",
+               "2026 FIFA WORLD CUP FINAL",
+              "METLIFE · NEW JERSEY",
+              "KICK OFF 3:00 PM EDT",
             ];
             for (let i = 0; i < 8; i++) {
               const t = words[i % words.length];
@@ -3286,7 +3286,7 @@
           );
           x.fillStyle = "#5b6a85";
           x.font = "600 44px " + f;
-          x.fillText("INTERNATIONAL FRIENDLY", w / 2, 425);
+          x.fillText("2026 FIFA WORLD CUP FINAL", w / 2, 425);
           sbTex.needsUpdate = true;
         };
         drawScoreboard();
