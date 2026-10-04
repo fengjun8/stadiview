@@ -1,0 +1,42 @@
+name: Refresh match card
+
+# The upcoming-match card and the Tickets list are generated from the venue's
+# own published listings, so they only move when this runs. 12:17 UTC is
+# 08:17/09:17 in East Rutherford: after the night's reseeding, before the
+# morning traffic.
+
+on:
+  schedule:
+    - cron: "17 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch the venue feeds
+        run: node scripts/refresh-match.mjs
+
+      - name: Commit the new snapshot
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing moved since the last run."
+            exit 0
+          fi
+          git config user.name "match-refresh[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/match.json index.html
+          git commit -m "Refresh the match card from the venue feed ($(date -u +%F))"
+          git push origin HEAD:"${GITHUB_REF_NAME}"

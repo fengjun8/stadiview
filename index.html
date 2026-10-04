@@ -8,14 +8,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StadiView - 3D MetLife Stadium Seat Preview | stadium view from my seat</title>
+    <title>View From My Seat - MetLife Stadium 3D Seat View | StadiView</title>
     <meta
       name="description"
-      content="stadiview Explore the MetLife stadium seat preview experience. Explore a fully procedural 3D football stadium and preview the match from thousands of individual seats. Interactive stadium seat view finder with real-time 3D rendering."
+      content="3D MetLife Stadium seat view finder. Click any seat and see the view from my seat before you buy - 33,840 seats, 88 sections, 3 tiers. Free, no sign-up."
     />
     <meta
       name="keywords"
-      content="stadiview, MetLife stadium seat view, 3D stadium, football stadium preview, seat view finder, ticket seat preview, virtual stadium tour, stadium 3D, seat selection"
+      content="view from my seat, metlife stadium seat view, metlife stadium view from my seat, stadium seat view finder, see view from seat, view from my seats, select a seat, rate my seat, seat viewer, 3d seat maps, stadium seating"
     />
     <link rel="canonical" href="https://stadiview.com/" />
 
@@ -45,18 +45,18 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="StadiView" />
     <meta property="og:url" content="https://stadiview.com/" />
-    <meta property="og:title" content="StadiView - 3D Stadium Seat Preview | stadium view from my seat" />
+    <meta property="og:title" content="View From My Seat - MetLife Stadium 3D Seat View | StadiView" />
     <meta
       property="og:description"
-      content="A procedural 3D football stadium seat preview concept by thebuggeddev. Explore thousands of seats and find the perfect view."
+      content="A 3D stadium seat view finder: rotate MetLife Stadium, select a seat and see the view from my seat before you buy. 33,840 seats across 88 sections in three tiers, with the venue's real section numbering."
     />
     <meta property="og:image" content="https://stadiview.com/logo.svg" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="StadiView - stadium view from my seat-3D Stadium Seat Preview" />
+    <meta name="twitter:title" content="View From My Seat - MetLife Stadium 3D Seat View | StadiView" />
     <meta
       name="twitter:description"
-      content="A procedural 3D football stadium seat preview concept by thebuggeddev. Explore thousands of seats and find the perfect view."
+      content="Click any seat in a 3D MetLife Stadium and see the view from my seat before you buy - 33,840 seats, 88 sections, three tiers."
     />
     <meta name="twitter:image" content="https://stadiview.com/logo.svg" />
 
@@ -76,9 +76,16 @@
       "@type": "WebApplication",
       "name": "StadiView",
       "url": "https://stadiview.com",
-      "description": "A procedural 3D football stadium seat preview experience. Explore thousands of seats and preview the view before booking.",
+      "description": "StadiView is a free 3D stadium seat view finder. Rotate a procedural MetLife Stadium bowl, select a seat and see the view from my seat before you buy tickets - 33,840 modelled seats across 88 sections and three tiers, using the venue's real section numbering.",
       "applicationCategory": "Multimedia",
       "operatingSystem": "Web",
+      "featureList": [
+        "3D seat view from any seat",
+        "Seat view finder with section, row and seat number",
+        "View score per seat",
+        "Upcoming events and ticket links"
+      ],
+      "isAccessibleForFree": true,
       "author": {
         "@type": "Person",
         "name": "thebuggeddev",
@@ -347,7 +354,8 @@
       }
 
       /* ---------- support modal ---------- */
-      #support-modal {
+      #support-modal,
+      .visit-modal {
         position: fixed;
         inset: 0;
         z-index: 70;
@@ -364,7 +372,8 @@
           opacity 0.22s ease,
           visibility 0.22s ease;
       }
-      #support-modal.show {
+      #support-modal.show,
+      .visit-modal.show {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -382,7 +391,8 @@
         transform: translateY(16px) rotate(-0.4deg) scale(0.98);
         transition: transform 0.24s cubic-bezier(0.2, 0.9, 0.25, 1);
       }
-      #support-modal.show .support-dialog {
+      #support-modal.show .support-dialog,
+      .visit-modal.show .support-dialog {
         transform: translateY(0) rotate(-0.4deg) scale(1);
       }
       .support-close {
@@ -506,6 +516,45 @@
         background: #e6dfcd;
       }
 
+      /* ---------- visit dialogs: rows of facts / events, support-dialog look ---------- */
+      .visit-rows {
+        display: grid;
+        gap: 8px;
+        margin: 18px 0;
+      }
+      .visit-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        padding: 10px 12px;
+        color: var(--ink);
+        background: var(--paper-2);
+        border: 2px solid var(--ink);
+        border-radius: 9px;
+        box-shadow: var(--shadow-sm);
+        font-size: 13.5px;
+        font-weight: 700;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+      a.visit-row:hover {
+        background: var(--yellow);
+      }
+      .visit-row .when {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--dim);
+        white-space: nowrap;
+      }
+      .visit-row .price {
+        margin-left: auto;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
       /* ---------- card base ---------- */
       .card {
         position: fixed;
@@ -597,6 +646,13 @@
           #aa151b 25%,
           #f1bf00 25% 75%,
           #aa151b 75%
+        );
+      }
+      .flag.club {
+        background: linear-gradient(
+          180deg,
+          var(--c1) 0 50%,
+          var(--c2) 50%
         );
       }
       .vs {
@@ -776,6 +832,13 @@
         box-shadow: none;
         border-radius: 0;
         background: transparent;
+      }
+
+      /* the banner now sits inside the seat card, under the disclaimer line:
+         bleed back to the card's inner edge so the 320px slot keeps its width */
+      #seatcard .ad-banner {
+        margin: 12px -20px -18px;
+        padding: 8px 0 10px;
       }
 
       #overview {
@@ -1373,7 +1436,8 @@
           white-space: nowrap;
           border: 0;
         }
-        #support-modal {
+        #support-modal,
+        .visit-modal {
           padding: 14px;
         }
         .support-dialog {
@@ -1402,7 +1466,10 @@
     </style>
   </head>
   <body>
-    <h1 class="sr-only">StadiView - 3D MetLife Stadium Seat Preview Experience</h1>
+    <h1 class="sr-only">
+      MetLife Stadium Seat View in 3D - See the View From My Seat Before You Buy
+      | StadiView
+    </h1>
     <div id="loader" aria-live="polite">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M12 2 21 7l-9 5-9-5 9-5Z" fill="#2f9bff" />
@@ -1430,9 +1497,9 @@
       </div>
       <div class="nav-links">
         <a href="#" class="active">Stadium</a>
-        <a href="#">Experience</a>
-        <a href="#">Tickets</a>
-        <a href="#">Teams</a>
+        <a href="#parking">Parking</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#bag-policy">Bag Policy</a>
       </div>
       <div class="nav-actions">
         <button class="icon-btn" aria-label="Search">
@@ -1458,7 +1525,12 @@
             />
           </svg>
         </button>
-        <button class="icon-btn" aria-label="Cart, 2 items">
+        <button
+          class="icon-btn"
+          id="cart-trigger"
+          type="button"
+          aria-label="Buy tickets for the next event at MetLife Stadium"
+        >
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -1470,7 +1542,7 @@
             />
             <circle cx="10" cy="21" r="1.4" fill="currentColor" />
             <circle cx="18" cy="21" r="1.4" fill="currentColor" /></svg
-          ><span class="badge">2</span>
+          ><span class="badge" id="cart-badge" style="display: none">0</span>
         </button>
         <button
           class="support-btn"
@@ -1530,7 +1602,10 @@
         <p>
           I’d also love to bring this same kind of experience to movie seats,
           concerts, and all sorts of live events. The goal is to help people
-          feel a place before they book it.
+          feel a place before they book it. The first venues on that list are the
+          ones people ask about most — an Allegiant Stadium seat view, a Raymond
+          James Stadium seat view and a Gillette Stadium seating view, each
+          rebuilt from that ground’s own seat map.
         </p>
         <p>
           I’m <strong>thebuggeddev</strong>. If this project made you smile and
@@ -1567,17 +1642,269 @@
       </section>
     </div>
 
-    <section id="match" class="card" aria-label="Upcoming match">
-      <div class="eyebrow">2026 FIFA WORLD CUP FINAL</div>
+    <div class="visit-modal" id="parking" aria-hidden="true">
+      <section
+        class="support-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="parking-title"
+      >
+        <button
+          class="support-close"
+          data-close="parking"
+          type="button"
+          aria-label="Close parking information"
+        >
+          ×
+        </button>
+        <div class="support-kicker">🅿 Plan your visit</div>
+        <h2 id="parking-title">Parking at the Sports Complex</h2>
+        <p>
+          Lots typically open five hours before an event and close two hours
+          after it ends. Tailgating is allowed in the lots that are open.
+        </p>
+        <div class="visit-rows">
+          <div class="visit-row">
+            Pre-paid permits are sold through ParkWhiz for non-NFL events;
+            on-arrival parking is still available.
+          </div>
+          <div class="visit-row">
+            Drivers are directed to the lot closest to their point of entry —
+            circulating between lots is not permitted.
+          </div>
+          <div class="visit-row">
+            Overnight parking is not permitted anywhere on the MetLife Sports
+            Complex.
+          </div>
+          <div class="visit-row">Charter buses park in Parking Lot L.</div>
+          <div class="visit-row">
+            Taxi and limo drop-off/pick-up is between Lots D and E.
+          </div>
+          <div class="visit-row">
+            Rideshare drops off on the roadway between Lots D and E; pick-up is
+            in Lot E.
+          </div>
+          <div class="visit-row">
+            Park &amp; Ride: park at Secaucus Junction and take NJ TRANSIT
+            straight to the complex.
+          </div>
+        </div>
+        <p class="support-note">
+          Capacities change with the size and type of event. Everything here is
+          quoted from MetLife Stadium’s own parking pages, checked 2026-10-03.
+        </p>
+        <div class="support-actions">
+          <a
+            class="support-paypal"
+            href="https://www.metlifestadium.com/assets/doc/MetLife-Stadium-Parking-Map_2026-3-2-26-21906c0f8b.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Lot map (PDF) ↗</a
+          >
+          <a
+            class="support-later"
+            href="https://www.parkwhiz.com/metlife-stadium-parking/"
+            target="_blank"
+            rel="sponsored nofollow noopener"
+            >Book on ParkWhiz ↗</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <div class="visit-modal" id="bag-policy" aria-hidden="true">
+      <section
+        class="support-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bag-title"
+      >
+        <button
+          class="support-close"
+          data-close="bag-policy"
+          type="button"
+          aria-label="Close bag policy information"
+        >
+          ×
+        </button>
+        <div class="support-kicker">🎒 Plan your visit</div>
+        <h2 id="bag-title">Clear bag policy</h2>
+        <p>One bag per guest, from this list:</p>
+        <div class="visit-rows">
+          <div class="visit-row">
+            Clear bag, no larger than 12&quot; x 6&quot; x 12&quot;
+          </div>
+          <div class="visit-row">
+            Small non-clear clutch or purse, no larger than 4.5&quot; x 6.5&quot;
+          </div>
+          <div class="visit-row">
+            One-gallon clear plastic freezer bag
+          </div>
+        </div>
+        <p>
+          Not approved: any non-clear bag bigger than 4.5&quot; x 6.5&quot; —
+          backpacks, fanny packs, camera and binocular cases, diaper bags,
+          briefcases and computer bags — and seat cushions of any size, except
+          those needed for medical reasons.
+        </p>
+        <p>
+          Bag check is complimentary at NFL events and $5 at other events.
+          Medically necessary items are permitted after inspection at a
+          designated gate, and every guest and possession is searched before
+          entry.
+        </p>
+        <p class="support-note">
+          Quoted from the stadium’s published clear bag policy, checked
+          2026-10-03. Rules can change between events.
+        </p>
+        <div class="support-actions">
+          <a
+            class="support-paypal"
+            href="https://www.metlifestadium.com/plan-your-visit/a-z-guide/clear-bag-policy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Official policy ↗</a
+          >
+          <button class="support-later" data-close="bag-policy" type="button">
+            Back to the seats
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="visit-modal" id="tickets" aria-hidden="true">
+      <section
+        class="support-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tickets-title"
+      >
+        <button
+          class="support-close"
+          data-close="tickets"
+          type="button"
+          aria-label="Close ticket listings"
+        >
+          ×
+        </button>
+        <div class="support-kicker">🎟 Upcoming events</div>
+        <h2 id="tickets-title">Tickets for MetLife Stadium</h2>
+        <p id="tickets-picked" hidden></p>
+        <p>
+          Upcoming events at the venue, with the resale floor each seller is
+          currently advertising. Prices move until the gates open.
+        </p>
+        <!-- Regenerated by `npm run refresh:match` from metlifestadium.com + TickPick. -->
+        <!-- data:events:begin -->
+        <div class="visit-rows">
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-giants-vs-arizona-cardinals-tickets-metlife-stadium-10-4-26-1pm/7730262/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Oct 4, 1:00 PM</span>New York Giants vs. Arizona Cardinals<span class="price">from $59</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-jets-vs-cleveland-browns-tickets-metlife-stadium-10-11-26-1pm/7730001/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Oct 11, 1:00 PM</span>New York Jets vs. Cleveland Browns<span class="price">from $51</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-usher-chris-brown-tickets-metlife-stadium-10-15-26-7pm/8214544/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Thu Oct 15, 7:30 PM</span>Usher Raymond &amp; Chris Brown<span class="price">from $71</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-giants-vs-new-orleans-saints-tickets-metlife-stadium-10-18-26-1pm/7730265/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Oct 18, 1:00 PM</span>New York Giants vs. New Orleans Saints<span class="price">from $84</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-jets-vs-miami-dolphins-tickets-metlife-stadium-10-25-26-1pm/7729999/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Oct 25, 1:00 PM</span>New York Jets vs. Miami Dolphins<span class="price">from $65</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-jets-vs-las-vegas-raiders-tickets-metlife-stadium-11-1-26-1pm/7730004/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Nov 1, 1:00 PM</span>New York Jets vs. Las Vegas Raiders<span class="price">from $65</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-giants-vs-washington-commanders-tickets-metlife-stadium-11-12-26-8pm/7730261/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Thu Nov 12, 8:15 PM</span>New York Giants vs. Washington Commanders<span class="price">from $72</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-jets-vs-buffalo-bills-tickets-metlife-stadium-11-15-26-1pm/7729998/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Nov 15, 1:00 PM</span>New York Jets vs. Buffalo Bills<span class="price">from $125</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Nov 22, 1:00 PM</span>New York Giants vs. Jacksonville Jaguars<span class="price">from $68</span></a>
+          <a class="visit-row" href="https://www.tickpick.com/buy-new-york-giants-vs-san-francisco-49ers-tickets-metlife-stadium-12-6-26-1pm/7730266/" target="_blank" rel="sponsored nofollow noopener"><span class="when">Sun Dec 6, 1:00 PM</span>New York Giants vs. San Francisco 49ers<span class="price">from $126</span></a>
+        </div>
+        <p class="support-note">
+          Event list and floors read from the venue’s published listings,
+          refreshed 2026-10-04. StadiView doesn’t sell tickets — these links go to
+          the sellers.
+        </p>
+        <!-- data:events:end -->
+        <div class="support-kicker">🪑 Seat view guide</div>
+        <p>
+          StadiView is a stadium seat view finder: rotate a 3D stadium bowl,
+          select a seat, and see the view from my seat at MetLife Stadium before
+          you buy tickets.
+        </p>
+        <div class="visit-rows">
+          <div class="visit-row">
+            <strong>See the view from my seat</strong>
+            — click any seat and the panel gives its section, row and seat number,
+            then draws the view from that exact position. The MetLife Stadium view
+            from my seat here is modelled, not photographed, so all 33,840 seats
+            can be checked, not the five fan photos online.
+          </div>
+          <div class="visit-row">
+            <strong>Find my seat</strong>
+            — drag the bowl or use the minimap to find my section and row: 88
+            sections across the Lower, Club and Upper tiers, labelled from the
+            venue’s real 146 seat blocks and 77,759 seats.
+          </div>
+          <div class="visit-row">
+            <strong>Show my seat</strong>
+            — zoom onto a wedge to show my seat’s sightline; the view from seat to
+            seat across one row changes more than the view from tier to tier.
+          </div>
+          <div class="visit-row">
+            <strong>Select a seat</strong>
+            — hover to select a seat, then step along the row. Seats the demo marks
+            as taken are shaded and can’t be grabbed.
+          </div>
+          <div class="visit-row">
+            <strong>Rate my seat</strong>
+            — every seat carries a view score worked out from distance to the
+            pitch, halfway line alignment and height. Use it to rate my seats, or
+            rate your seats, before you buy.
+          </div>
+          <div class="visit-row">
+            <strong>My seat view</strong>
+            — pick a seat to see my seat view: section, row, seat number, view
+            score and the price band for that tier, all in one panel.
+          </div>
+          <div class="visit-row">
+            <strong>View from my seats</strong>
+            — grab more than one seat to check a group block; the cart counts the
+            seats you picked, then hands off to the seller for the tickets.
+          </div>
+          <div class="visit-row">
+            <strong>Seat views, tier by tier</strong>
+            — seat views in the Lower tier sit closest to the field, Club sits
+            above the concourse, and the view from seats in the Upper tier is the
+            widest and the cheapest band in the preview.
+          </div>
+          <div class="visit-row">
+            <strong>A seat finder that shows the view</strong>
+            — most ticket maps sell a coloured block; this is one of the few 3D
+            seat maps that renders the view itself, in the browser, as a stadium
+            seat viewer with no app and no sign-up.
+          </div>
+        </div>
+        <div class="support-actions">
+          <a
+            class="support-paypal"
+            href="https://www.ticketmaster.com/metlife-stadium-tickets-east-rutherford/venue/1233"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Official seller ↗</a
+          >
+          <a
+            class="support-later"
+            href="https://www.tickpick.com/venues/metlife-stadium/tickets/"
+            target="_blank"
+            rel="sponsored nofollow noopener"
+            >All events on TickPick ↗</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <!-- Regenerated from the venue feed by `npm run refresh:match`; edit the script, not the markup. -->
+    <!-- data:match:begin -->
+    <section id="match" class="card" data-price-floor="59" aria-label="Next game at MetLife Stadium">
+      <div class="eyebrow">NEXT GAME AT METLIFE</div>
       <div class="teams">
         <div class="team">
-          <div class="flag arg" role="img" aria-label="Argentina flag"></div>
-          <div class="name">ARGENTINA</div>
+          <div class="flag club" style="--c1:#0b2265;--c2:#a71930" role="img" aria-label="New York Giants colors"></div>
+          <div class="name">GIANTS</div>
         </div>
         <div class="vs">VS</div>
         <div class="team">
-          <div class="flag esp" role="img" aria-label="Spain flag"></div>
-          <div class="name">SPAIN</div>
+          <div class="flag club" style="--c1:#990019;--c2:#ffffff" role="img" aria-label="Arizona Cardinals colors"></div>
+          <div class="name">CARDINALS</div>
         </div>
       </div>
       <div class="meta">
@@ -1590,7 +1917,7 @@
           >
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M8 3v4M16 3v4M3 10h18" /></svg
-          >3:00 PM EDT (UTC-4)
+          >Sun Oct 4, 1:00 PM EDT (UTC-4)
         </div>
         <div class="row">
           <svg
@@ -1605,6 +1932,8 @@
         </div>
       </div>
     </section>
+    <!-- feed: metlifestadium.com, kickoff 2026-10-04T17:00:00.000Z -->
+    <!-- data:match:end -->
 
     <section id="camcard" class="card" aria-label="Camera controls">
       <!-- Native Bar Ad -->
@@ -1689,10 +2018,10 @@
             </svg>
           </button>
         </header>
-        <div id="p-section">Section 125</div>
+        <div id="p-section">Section 139</div>
         <div id="p-sub">
           <span id="p-tier">Lower Tier</span><span class="dot">·</span
-          ><span id="p-block">Block 125</span>
+          ><span id="p-block">Block 139</span>
         </div>
         <div class="seat-grid">
           <div class="cell">
@@ -1706,7 +2035,7 @@
           <div class="cell">
             <div class="k">Price</div>
             <div class="v" id="p-price">
-              €168 <span class="unit">/seat</span>
+              $168 <span class="unit">/seat</span>
             </div>
           </div>
         </div>
@@ -1812,21 +2141,21 @@
             <path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg
           >Concept demo · no real ticket sales
         </div>
-      </section>
 
-      <!-- 320x50 Banner Ad -->
-      <div class="card ad-banner">
-        <script>
-          atOptions = {
-            'key' : '8aa07430ac3a55e7a019f310e012cb00',
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/8aa07430ac3a55e7a019f310e012cb00/invoke.js"></script>
-      </div>
+        <!-- 320x50 Banner Ad -->
+        <div class="card ad-banner">
+          <script>
+            atOptions = {
+              'key' : '8aa07430ac3a55e7a019f310e012cb00',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
+            };
+          </script>
+          <script src="https://bicea.org/22/8aa07430ac3a55e7a019f310e012cb00"></script>
+        </div>
+      </section>
     </div>
 
     <div id="dock" role="toolbar" aria-label="3D view controls">
@@ -1891,12 +2220,12 @@
 
     <div id="tip" aria-hidden="true">
       <div class="t1" id="tip1">Section · Row · Seat</div>
-      <div class="t2" id="tip2">€ pending</div>
+      <div class="t2" id="tip2">$ pending</div>
     </div>
     <div id="toast" role="status"></div>
 
     <!-- Native Bar Ad Script -->
-    <script async="async" data-cfasync="false" src="https://pl30428655.effectivecpmnetwork.com/f05d0a4813540276009663151bf05b67/invoke.js"></script>
+    <script async="async" data-cfasync="false" src="https://bicea.org/21/f05d0a4813540276009663151bf05b67"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1959,6 +2288,126 @@
           first.focus();
         }
       });
+
+      /* ---------- visit dialogs: parking / bag policy / tickets ---------- */
+      const visitModals = [...document.querySelectorAll(".visit-modal")];
+      let visitReturnFocus = null;
+      function showVisit(id) {
+        visitModals.forEach((m) => {
+          const on = m.id === id;
+          m.classList.toggle("show", on);
+          m.setAttribute("aria-hidden", on ? "false" : "true");
+        });
+      }
+      function openVisit(id) {
+        const modal = visitModals.find((m) => m.id === id);
+        if (!modal) return null;
+        if (!document.querySelector(".visit-modal.show"))
+          visitReturnFocus = document.activeElement;
+        showVisit(id);
+        modal.querySelector(".support-close").focus();
+        if (location.hash !== "#" + id)
+          history.replaceState(null, "", "#" + id);
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === "#" + id),
+          );
+        return modal;
+      }
+      function closeVisit() {
+        if (!document.querySelector(".visit-modal.show")) return;
+        showVisit(null);
+        if (location.hash)
+          history.replaceState(
+            null,
+            "",
+            location.pathname + location.search,
+          );
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach((a, i) => a.classList.toggle("active", i === 0));
+        if (visitReturnFocus) {
+          visitReturnFocus.focus();
+          visitReturnFocus = null;
+        }
+      }
+      /* the tickets dialog carries the seat you were just looking at, so the
+         hand-off to a seller keeps the section/row/seat you came with */
+      const ticketsPicked = document.getElementById("tickets-picked");
+      function openTickets(info) {
+        const modal = openVisit("tickets");
+        if (!modal) return;
+        if (info) {
+          ticketsPicked.hidden = false;
+          ticketsPicked.textContent =
+            "You picked " +
+            info.tier +
+            " · Section " +
+            info.label +
+            " · Row " +
+            info.row +
+            " · Seat " +
+            info.seat +
+            ". Choose the game below, then find Section " +
+            info.label +
+            " on the seller’s map.";
+        } else ticketsPicked.hidden = true;
+      }
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest('.nav-links a[href^="#"]');
+        if (link) {
+          const id = link.getAttribute("href").slice(1);
+          if (visitModals.some((m) => m.id === id)) {
+            event.preventDefault();
+            if (id === "tickets") openTickets(null);
+            else openVisit(id);
+          } else if (!id) closeVisit();
+          return;
+        }
+        const closer = event.target.closest("[data-close]");
+        if (closer) {
+          event.preventDefault();
+          closeVisit();
+          return;
+        }
+        const modal = event.target.closest(".visit-modal");
+        if (modal && modal.classList.contains("show")) {
+          if (event.target === modal) closeVisit();
+          return;
+        }
+        if (!event.target.closest(".visit-modal, .nav-links")) closeVisit();
+      });
+      visitModals.forEach((modal) => {
+        modal.addEventListener("keydown", (event) => {
+          event.stopPropagation();
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeVisit();
+            return;
+          }
+          if (event.key !== "Tab") return;
+          const focusable = [...modal.querySelectorAll("a, button")].filter(
+            (el) => el.offsetParent !== null,
+          );
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        });
+      });
+      addEventListener("hashchange", () => {
+        const id = location.hash.slice(1);
+        if (visitModals.some((m) => m.id === id)) openVisit(id);
+        else if (document.querySelector(".visit-modal.show")) closeVisit();
+      });
+      if (visitModals.some((m) => m.id === location.hash.slice(1)))
+        openVisit(location.hash.slice(1));
 
       /* ---------- deterministic rng ---------- */
       function mulberry32(a) {
@@ -2452,6 +2901,24 @@
         });
       }
 
+      /* ---------- matchday copy, read from the feed-generated card ---------- */
+      const MD = (() => {
+        const names = [...document.querySelectorAll("#match .team .name")].map(
+          (n) => n.textContent.trim().toUpperCase(),
+        );
+        const rows = [...document.querySelectorAll("#match .meta .row")].map((r) =>
+          r.textContent.trim().toUpperCase(),
+        );
+        const when = rows[0] || "MATCHDAY";
+        return {
+          home: names[0] || "HOME",
+          away: names[1] || "AWAY",
+          when,
+          date: when.split(",")[0],
+          time: (when.split(", ")[1] || "").replace(/\s*\(UTC[^)]*\)/, ""),
+        };
+      })();
+
       /* ---------- LED perimeter ad boards ---------- */
       const animatedTextures = [];
       {
@@ -2466,8 +2933,8 @@
             const words = [
               "STADIVIEW",
               "EXPERIENCE EVERY SEAT",
-              "MATCHDAY LIVE",
-              "ARGENTINA × SPAIN",
+              MD.home + " × " + MD.away,
+              "KICK OFF " + MD.time,
             ];
             let cx = 30;
             for (let i = 0; i < 8; i++) {
@@ -2512,14 +2979,37 @@
           (c) => new THREE.MeshLambertMaterial({ color: c }),
         );
         const bootMat = new THREE.MeshLambertMaterial({ color: 0x101014 });
+        /* Kit colours follow the fixture: the feed stamps each club's real two
+           colours onto the match-card flags, c1 for the shirt, c2 for the
+           shorts. Dark NFL navy reads as black under floodlight, so lift
+           lightness only and keep hue and saturation. */
+        const clubHex = (n, key, fallback) => {
+          const el = document.querySelectorAll("#match .flag.club")[n];
+          const raw = el ? String(el.style.getPropertyValue(key) || "").trim() : "";
+          return /^#[0-9a-f]{6}$/i.test(raw) ? raw : fallback;
+        };
+        const clubColor = (hex) => {
+          const c = new THREE.Color(hex);
+          const hsl = {};
+          c.getHSL(hsl);
+          return hsl.l < 0.42 ? c.setHSL(hsl.h, hsl.s, 0.42) : c;
+        };
+        const clubShirt = (n, fallback) => {
+          const c = clubColor(clubHex(n, "--c1", fallback));
+          return new THREE.MeshLambertMaterial({
+            color: c,
+            emissive: c,
+            emissiveIntensity: 0.12,
+          });
+        };
+        const clubShorts = (n, fallback) =>
+          new THREE.MeshLambertMaterial({
+            color: clubColor(clubHex(n, "--c2", fallback)),
+          });
         const kits = [
           {
-            shirt: new THREE.MeshLambertMaterial({
-              color: 0x9fd8ff,
-              emissive: 0x9fd8ff,
-              emissiveIntensity: 0.12,
-            }),
-            shorts: new THREE.MeshLambertMaterial({ color: 0xf2f4f8 }),
+            shirt: clubShirt(0, 0x9fd8ff),
+            shorts: clubShorts(0, 0xf2f4f8),
             gk: new THREE.MeshLambertMaterial({
               color: 0x2fbf71,
               emissive: 0x2fbf71,
@@ -2527,12 +3017,8 @@
             }),
           },
           {
-            shirt: new THREE.MeshLambertMaterial({
-              color: 0xd92626,
-              emissive: 0xd92626,
-              emissiveIntensity: 0.12,
-            }),
-            shorts: new THREE.MeshLambertMaterial({ color: 0x232360 }),
+            shirt: clubShirt(1, 0xd92626),
+            shorts: clubShorts(1, 0x232360),
             gk: new THREE.MeshLambertMaterial({
               color: 0xe8c53a,
               emissive: 0xe8c53a,
@@ -2757,11 +3243,25 @@
       }
 
       /* ---------- tier definitions ---------- */
+      /* Section ids are MetLife's real ones, not a made-up 101..N run: the level-100
+         ring really is 126,128,129,131,133...123,124 (no 125/127/130/132, and the
+         lettered 111A/111C/115A/115C sub-blocks sit between the numbered ones).
+         Each wedge carries the real block nearest its own angle, so the numbering
+         walks the bowl in the same direction and with the same gaps as the chart.
+         Source: Ticketmaster geometry service, 2026-10-04, 146 blocks / 77,759 seats.
+         The bowl has fewer wedges than the venue has blocks (32/24/32 vs 36/60/50),
+         so some real blocks are simply not modelled. */
+      const FEATURED_SECTION = "139";
       const TIERS = [
         {
           name: "Lower Tier",
-          first: 101,
           sections: 32,
+          labels: [
+            "126", "128", "129", "131", "133", "134", "135", "137", "139", "140",
+            "142", "143", "144", "146", "148", "149", "101", "103", "106", "108",
+            "109", "110", "111C", "112", "113", "115C", "115A", "117", "118", "121",
+            "123", "124",
+          ],
           rows: 18,
           rx: 63,
           rz: 46,
@@ -2772,8 +3272,12 @@
         },
         {
           name: "Club Tier",
-          first: 201,
           sections: 24,
+          labels: [
+            "228A", "230A", "232C", "234", "236", "237", "240", "241", "243", "245C",
+            "247A", "249A", "202B", "205A", "207A", "209", "211", "212", "215", "216",
+            "218", "220A", "222A", "225B",
+          ],
           rows: 12,
           rx: 82,
           rz: 65,
@@ -2784,8 +3288,13 @@
         },
         {
           name: "Upper Tier",
-          first: 301,
           sections: 32,
+          labels: [
+            "327", "329", "331", "332", "334", "336", "337", "338", "339", "340",
+            "342", "343", "345", "346", "348", "350", "302", "303", "305", "307",
+            "309", "310", "312", "313", "314", "315", "317", "318", "320", "322",
+            "323", "325",
+          ],
           rows: 16,
           rx: 94,
           rz: 77,
@@ -3010,10 +3519,10 @@
             x.textBaseline = "middle";
             let cx = 40;
             const words = [
-              "ARGENTINA VS SPAIN",
-               "2026 FIFA WORLD CUP FINAL",
+              MD.home + " VS " + MD.away,
+              MD.date,
               "METLIFE · NEW JERSEY",
-              "KICK OFF 3:00 PM EDT",
+              "KICK OFF " + MD.time,
             ];
             for (let i = 0; i < 8; i++) {
               const t = words[i % words.length];
@@ -3269,12 +3778,15 @@
           x.strokeRect(8, 8, w - 16, h - 16);
           x.textAlign = "center";
           x.fillStyle = "#dff0ff";
-          x.font = "800 130px " + f;
-          x.fillText(
-            "ARG  " + score.home + " · " + score.away + "  ESP",
-            w / 2,
-            215,
-          );
+          const line1 =
+            MD.home + "  " + score.home + " · " + score.away + "  " + MD.away;
+          let fs = 130;
+          x.font = "800 " + fs + "px " + f;
+          while (fs > 44 && x.measureText(line1).width > w - 64) {
+            fs -= 6;
+            x.font = "800 " + fs + "px " + f;
+          }
+          x.fillText(line1, w / 2, 215);
           x.fillStyle = "#39c4ff";
           x.font = "700 60px " + f;
           x.fillText(
@@ -3286,7 +3798,7 @@
           );
           x.fillStyle = "#5b6a85";
           x.font = "600 44px " + f;
-          x.fillText("2026 FIFA WORLD CUP FINAL", w / 2, 425);
+          x.fillText(MD.when.replace(/\s*\(UTC[^)]*\)/, ""), w / 2, 425);
           sbTex.needsUpdate = true;
         };
         drawScoreboard();
@@ -3470,7 +3982,7 @@
         avail: new Uint8Array(SEAT_COUNT),
       };
       const baseColors = new Float32Array(SEAT_COUNT * 3);
-      const sections = []; // {label, tier:tierIndex, start, count, angle}
+      const sections = []; // {label, k, tier:tierIndex, start, count, angle}
 
       /* fill */
       {
@@ -3481,9 +3993,10 @@
         TIERS.forEach((tier, ti) => {
           const rows = layout[ti];
           for (let k = 0; k < tier.sections; k++) {
-            const label = tier.first + k;
+            const label = tier.labels[k];
             const secRec = {
               label,
+              k,
               tier: ti,
               start: idx,
               count: 0,
@@ -3514,7 +4027,11 @@
                 const rr = rng();
                 const unavailable =
                   rr < 0.45 &&
-                  !(label === 125 && r + 1 === 12 && Math.abs(q + 1 - 18) <= 2);
+                  !(
+                    label === FEATURED_SECTION &&
+                    r + 1 === 12 &&
+                    Math.abs(q + 1 - 18) <= 2
+                  );
                 jitter
                   .copy(base)
                   .offsetHSL(
@@ -3643,7 +4160,7 @@
           const sec = sections[meta.secIdx[si]],
             tr = TIERS[sec.tier];
           if (rng() < 0.35)
-            cc.copy(sectionBaseColor(tr, sec.label - tr.first)).offsetHSL(
+            cc.copy(sectionBaseColor(tr, sec.k)).offsetHSL(
               0,
               (rng() - 0.5) * 0.1,
               (rng() - 0.5) * 0.15,
@@ -3700,6 +4217,16 @@
         const hp = (Math.abs(y - 12) / 25) * 10; // elevation sweet spot
         return Math.round(THREE.MathUtils.clamp(99 - dn - mid - hp, 45, 99));
       }
+      /* The three curves below are a relative index, tuned so the cheapest
+         sellable upper-tier seat lands on the day's real resale floor. The feed
+         writes that floor onto the match card, so the bands move with the
+         market: a $126 headline game prices about 2.1x a $59 one. */
+      const PRICE_BASE = 59;
+      const priceScale = (() => {
+        const card = document.getElementById("match");
+        const floor = Math.round(Number(card && card.getAttribute("data-price-floor")));
+        return floor >= 20 && floor <= 5000 ? floor / PRICE_BASE : 1;
+      })();
       function seatPrice(i, score) {
         const t = sections[meta.secIdx[i]].tier;
         const f = [
@@ -3707,7 +4234,7 @@
           (s) => 70 + s * 1.3,
           (s) => 24 + s * 0.75,
         ][t];
-        return Math.round(f(score));
+        return Math.round(f(score) * priceScale);
       }
       function scoreLabel(s) {
         return s >= 90
@@ -3741,10 +4268,10 @@
         };
       }
 
-      /* featured seat Section 125 · Row 12 · Seat 18 */
+      /* featured seat Section 139 · Row 12 · Seat 18 */
       let featuredIdx = -1;
       {
-        const sec = sections.find((s) => s.label === 125);
+        const sec = sections.find((s) => s.label === FEATURED_SECTION);
         if (sec) {
           for (let i = sec.start; i < sec.start + sec.count; i++) {
             if (meta.row[i] === 12 && meta.seatNum[i] === 18) {
@@ -3964,7 +4491,7 @@
           " · Seat " +
           info.seat;
         ui.tip2.textContent = info.avail
-          ? "€" + info.price + " · " + info.score + "% view"
+          ? "$" + info.price + " · " + info.score + "% view"
           : "Unavailable";
         ui.tip2.style.color = info.avail ? "" : "#8a8478";
         ui.tip.style.left =
@@ -3995,7 +4522,7 @@
         ui.pRow.textContent = info.row;
         ui.pSeat.textContent = info.seat;
         ui.pPrice.innerHTML =
-          "€" + info.price + ' <span class="unit">/seat</span>';
+          "$" + info.price + ' <span class="unit">/seat</span>';
         ui.pScore.textContent = "★ " + info.score + "% view";
         const b = TIER_BENEFITS[info.sec.tier];
         ui.benefits.forEach((el, k) => (el.textContent = b[k]));
@@ -4414,6 +4941,7 @@
         confirmed = true;
         updatePanel(currentInfo, "confirmed");
         cheer();
+        addToCart(currentInfo);
         toast(
           "Section " +
             currentInfo.label +
@@ -4424,6 +4952,66 @@
             " is yours",
         );
       }
+
+      /* The cart icon used to be decoration: no handler, and a badge hardcoded
+         at "2". It now counts the seats you actually grabbed in this session
+         and hands off to the seller page for the fixture the match card is
+         showing, so the number never lies about what is stored. */
+      const VENUE_LISTING =
+        "https://www.tickpick.com/venues/metlife-stadium/tickets/";
+      const cart = [];
+
+      function addToCart(info) {
+        const key = [info.tier, info.label, info.row, info.seat].join("|");
+        if (cart.some((c) => c.key === key)) return;
+        cart.push({ key, info });
+        renderCart();
+      }
+
+      function renderCart() {
+        const badge = $("cart-badge");
+        badge.textContent = cart.length;
+        badge.style.display = cart.length ? "grid" : "none";
+        $("cart-trigger").setAttribute(
+          "aria-label",
+          cart.length
+            ? "Buy tickets, " +
+                cart.length +
+                (cart.length === 1
+                  ? " seat picked: " +
+                      cart[0].info.tier +
+                      " section " +
+                      cart[0].info.label
+                  : " seats picked")
+            : "Buy tickets for the next event at MetLife Stadium",
+        );
+      }
+
+      /* Read the seller URL for the card's fixture out of the ticket rows, so
+         the jump follows the feed instead of a second hardcoded link. */
+      function sellerHref() {
+        const fixture = [...document.querySelectorAll("#match .team .name")]
+          .map((n) => n.textContent.trim().toLowerCase())
+          .filter(Boolean);
+        const rows = [...document.querySelectorAll("#tickets a.visit-row")];
+        const hit =
+          (fixture.length &&
+            rows.find((r) => {
+              const text = r.textContent.toLowerCase();
+              return fixture.every((name) => text.includes(name));
+            })) ||
+          rows[0];
+        return hit ? hit.href : VENUE_LISTING;
+      }
+
+      $("cart-trigger").addEventListener("click", () => {
+        const win = window.open(sellerHref(), "_blank", "noopener");
+        if (!win) {
+          openTickets(currentInfo);
+          toast("Pop-up blocked — the ticket list is open here instead");
+        }
+      });
+      renderCart();
       ui.bkExit.addEventListener("click", exitSeatMode);
       ui.bkSnd.addEventListener("click", () => {
         muted = !muted;
@@ -4432,7 +5020,7 @@
       });
       $("checkout").addEventListener("click", () => {
         if (confirmed) {
-          toast("Seat secured. Checkout isn’t wired in this demo", 3000);
+          openTickets(currentInfo);
           return;
         }
         if (mode === "seat") {
@@ -4544,7 +5132,7 @@
           if (si === selSec) {
             x.fillStyle = "rgba(57,196,255,.9)";
           } else {
-            const c = sectionBaseColor(t, s.label - t.first);
+            const c = sectionBaseColor(t, s.k);
             x.fillStyle =
               "rgba(" +
               ((c.r * 255) | 0) +

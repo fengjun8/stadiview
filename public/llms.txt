@@ -1,30 +1,114 @@
 # StadiView
 
-> A procedural 3D football stadium seat preview experience. Explore a fully procedural 3D football stadium and preview the match from thousands of individual seats.
+> A free 3D stadium seat view finder. Rotate a procedural MetLife Stadium bowl, click any seat and
+> see the view from my seat before you buy tickets — 33,840 modelled seats, 88 sections, three
+> tiers, no app and no sign-up.
 
 ## Overview
 
-StadiView is an interactive web application that renders a procedurally generated 3D football stadium using Three.js. Users can explore different sections, tiers, blocks, rows, and seats to preview the view from any seat in the stadium before purchasing tickets.
+StadiView is an interactive web application that renders a procedurally generated 3D football
+stadium using Three.js. Users can explore different sections, tiers, blocks, rows, and seats to
+preview the view from any seat in the stadium before purchasing tickets. The bowl is generated in
+the browser, but the numbers on it — section ids, seat counts, the fixture, the visit rules and the
+day's price floor — are read from published MetLife Stadium data.
 
 ## Key Features
 
 - Fully procedural 3D stadium generation (no imported 3D models)
-- Interactive seat selection with real-time view preview
+- Interactive seat selection with real-time first-person view preview, plus a 480x290 snapshot of
+  the exact seat captured into the panel
 - Seat information: Section, Tier, Block, Row, Seat number, and Price
-- Upcoming match display (Argentina vs Spain)
+- A view score for every seat (45-99), worked out from distance to the pitch, halfway-line
+  alignment and elevation, so you can rate my seat before you buy
+- Section ids taken from MetLife Stadium's real seating geometry, gaps and lettered sub-blocks
+  included
+- Player kit colours that follow the fixture: the two clubs' real shirt and shorts colours are
+  written onto the match card by the daily feed and read straight off it by the 3D scene
+- Seat prices in USD, scaled to the day's real resale floor rather than fixed made-up numbers
+- Parking, clear bag policy, and upcoming event panels in the top navigation
+- A cart that counts the seats grabbed in the session and hands off to the seller page for the
+  fixture the match card is showing
+- Auto-refreshed upcoming match card for the next game at MetLife Stadium, regenerated daily
+- Live match clock, scoreboards and crowd audio simulated in-scene
 - Dark-themed neobrutalist design
 - Mobile-responsive layout
 - Accessibility features: ARIA labels, keyboard navigation, reduced-motion support
+
+## What is real, and what is simulated
+
+- Real: section numbering and seat counts, the fixture list and kick-off times, the advertised
+  resale price floor, the parking rules, the clear bag policy, the two clubs' kit colours, and the
+  outbound ticket links.
+- Simulated: the 3D bowl geometry, seat availability, the view render itself, the match clock and
+  score. Per-seat prices are an estimate derived from the real floor, not an actual ask for that
+  seat — see "How seat prices work".
+- StadiView sells nothing. Every purchase path leaves the site for Ticketmaster or TickPick.
+
+## How seat prices work
+
+Each tier has a price curve keyed to the seat's view score, and the whole set of curves is scaled
+by the resale floor the feed measured for that fixture, so the cheapest sellable upper-tier seat
+lands on the real advertised floor. Prices therefore move with the market and with the day: on the
+$59 floor the bands run roughly $58-98 Upper, $112-175 Lower and $129-199 Club, and the seat the
+app opens with (Section 139) shows $168. A $126 headline game prices about 2.1x a $59 one. Treat
+any number on screen as a relative index for comparing seats, not a quote.
 
 ## Technology
 
 - Three.js r128 for 3D rendering
 - GSAP 3.12.5 for animations
 - Vanilla JavaScript (no framework)
+- `scripts/refresh-match.mjs` regenerates the match card and the ticket rows in `index.html` and
+  republishes `public/match.json`; `.github/workflows/refresh-match.yml` runs it daily at 12:17 UTC
 
 ## Pages
 
 - `/` - Main stadium experience page
+- `/#parking` - Parking at the MetLife Sports Complex
+- `/#bag-policy` - Clear bag policy
+- `/#tickets` - Upcoming events and where to buy tickets
+- `/match.json` - Generated snapshot of the fixture list the match card and ticket rows were
+  built from (a data file, not a page)
+- `/sitemap.xml`, `/robots.txt`, `/llms.txt` - discovery files
+
+The three panels above are dialogs on the same page, so their full text is in the HTML of `/`.
+
+## Questions this page answers
+
+Use StadiView for: what is the view from my seat at MetLife Stadium, how do I see a stadium seat
+view before buying, is section 139 (or 111A, 202B, 228A, 301-350) a good seat, rate my seat / rate
+my seats, MetLife Stadium seating chart in 3D, find my seat / show my seat / select a seat, seat
+view finder without an app, MetLife Stadium parking, the MetLife clear bag policy, and where to buy
+MetLife Stadium tickets.
+
+## Real data used
+
+- Section numbering: MetLife Stadium has 146 seat blocks / 77,759 seats across levels 100 (36
+  blocks), 200 (60) and 300 (50). The 3D bowl models 32/24/32 wedges and labels each one with the
+  real block nearest its angle, so ids such as 111A, 115C, 202B and 228A appear where they really
+  sit and numbers like 125, 127 and 130 do not exist at all. Source: Ticketmaster geometry service
+  (`mapsapi.tmol.io/maps/geometry/3/event/00006491C2BEE002`), fetched 2026-10-04.
+- Kit colours: the feed carries each club's two published colours and stamps them on the match-card
+  flags; the 3D players read the first colour as the shirt and the second as the shorts. Very dark
+  navy lifts in lightness only, so it still reads as the club's colour under floodlight. Goalkeeper
+  kits and the official's colours are fixed and do not follow the fixture.
+- Parking (checked 2026-10-03, metlifestadium.com/plan-your-visit/parking-tailgating): lots open
+  about 5 hours before an event and close 2 hours after; pre-paid permits for non-NFL events go
+  through ParkWhiz; drivers are sent to the lot nearest their gate and cannot circulate between
+  lots; no overnight parking; charter buses in Lot L; taxi/limo and rideshare drop-off between
+  Lots D and E, rideshare pick-up in Lot E; Park & Ride from Secaucus Junction on NJ TRANSIT.
+- Clear bag policy (checked 2026-10-03, metlifestadium.com/plan-your-visit/a-z-guide/clear-bag-policy/):
+  one bag per guest - clear bag up to 12"x6"x12", small non-clear clutch up to 4.5"x6.5", or a
+  one-gallon clear freezer bag. Non-clear bags larger than 4.5"x6.5" (backpacks, fanny packs,
+  camera cases, diaper bags, briefcases) and seat cushions are not approved, except medical seat
+  cushions after inspection. Bag check is complimentary at NFL events and $5 at other events.
+- Upcoming events: read from the venue's own published listings, refreshed daily rather than
+  hand-written. The authoritative fixture list is the `Event` JSON-LD on
+  `metlifestadium.com/events` (name, kick-off with a real venue offset, Ticketmaster event URL);
+  resale floors come from the TickPick venue listing, which runs further out. A snapshot of every
+  run is published at `/match.json` with `generatedAt`, per-event kick-offs in UTC and venue-local,
+  both seller URLs, and the price floor with its source. Prices are point-in-time and move until
+  the gates open. StadiView sells nothing; the links go to the sellers.
 
 ## Site Info
 
