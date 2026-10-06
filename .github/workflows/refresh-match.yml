@@ -15,7 +15,9 @@ permissions:
 
 jobs:
   refresh:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moves to Ubuntu 26 on 2026-10-19, and a base-image
+    # swap is the last thing a fetch-and-commit job should discover on its own.
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       # Both feeds sit behind CDN edge nodes that some runner IPs reach slower (or
