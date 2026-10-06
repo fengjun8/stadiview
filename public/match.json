@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T16:30:52.066Z",
+  "generatedAt": "2026-10-06T16:54:04.454Z",
   "venue": "MetLife Stadium",
   "city": "East Rutherford, New Jersey, United States",
   "timezone": "America/New_York",
@@ -90,7 +90,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/event/00006488E1820E3A?brand=jets&artistid=805987&landing=s&wt.mc",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-miami-dolphins-tickets-metlife-stadium-10-25-26-1pm/7729999/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-dolphins",
-      "priceFloorUsd": 65,
+      "priceFloorUsd": 64,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
