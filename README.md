@@ -154,8 +154,9 @@ Prices are in USD and come from two steps:
    measured for the fixture on the card, carried as `data-price-floor`, and `59` is the tuning
    constant that puts the cheapest sellable upper-tier seat on the real advertised floor.
 
-On the current $59 floor that works out to roughly $112-175 Lower, $129-199 Club and $58-98 Upper,
-and the seat the app opens with — Section 139, Row 12, Seat 18 — shows $168. A $126 headline game
+On a $59 floor (what the feed measured on 2026-10-04) that works out to roughly $112-175 Lower,
+$129-199 Club and $58-98 Upper, and the seat the app opens with — Section 139, Row 12, Seat 18 —
+shows $168. At the $53 floor the next run measured, the same seat reads $151. A $126 headline game
 prices about 2.1x a $59 one. A floor outside $20-5000 is ignored and the index falls back to 1:1, so
 a bad fetch cannot price a seat at $2.
 

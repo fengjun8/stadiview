@@ -16,6 +16,12 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # Both feeds sit behind CDN edge nodes that some runner IPs reach slower (or
+      # not at all) over AAAA records; pin Node to A-first so a stall becomes a
+      # logged HTTP status instead of a silent 25s abort per fetch.
+      NODE_OPTIONS: "--dns-result-order=ipv4first"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,6 +30,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+
+      - name: Check the two feeds are reachable from this runner
+        run: |
+          for u in https://www.metlifestadium.com/events \
+                   https://www.tickpick.com/venues/metlife-stadium/tickets/; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -m 25 -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36' "$u" || echo ERR)
+            echo "$u -> $code"
+          done
 
       - name: Fetch the venue feeds
         run: node scripts/refresh-match.mjs

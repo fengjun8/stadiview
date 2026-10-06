@@ -48,10 +48,11 @@ day's price floor — are read from published MetLife Stadium data.
 
 Each tier has a price curve keyed to the seat's view score, and the whole set of curves is scaled
 by the resale floor the feed measured for that fixture, so the cheapest sellable upper-tier seat
-lands on the real advertised floor. Prices therefore move with the market and with the day: on the
-$59 floor the bands run roughly $58-98 Upper, $112-175 Lower and $129-199 Club, and the seat the
-app opens with (Section 139) shows $168. A $126 headline game prices about 2.1x a $59 one. Treat
-any number on screen as a relative index for comparing seats, not a quote.
+lands on the real advertised floor. Prices therefore move with the market and with the day. On the
+$59 floor measured 2026-10-04 the bands run roughly $58-98 Upper, $112-175 Lower and $129-199 Club,
+and the seat the app opens with (Section 139) shows $168; at the $53 floor measured two days later
+the same seat reads $151. A $126 headline game prices about 2.1x a $59 one. Treat any number on
+screen as a relative index for comparing seats, not a quote.
 
 ## Technology
 
