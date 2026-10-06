@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
-      # Both feeds sit behind CDN edge nodes that some runner IPs reach slower (or
-      # not at all) over AAAA records; pin Node to A-first so a stall becomes a
-      # logged HTTP status instead of a silent 25s abort per fetch.
+      # Preventive, not a fix for a known failure: the first scheduled run never
+      # reached a runner, so nothing here has been exercised yet. A-first DNS just
+      # keeps a stalled AAAA path from turning into a silent 25s abort per fetch.
       NODE_OPTIONS: "--dns-result-order=ipv4first"
     steps:
       - uses: actions/checkout@v4
