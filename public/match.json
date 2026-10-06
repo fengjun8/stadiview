@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T16:54:04.454Z",
+  "generatedAt": "2026-10-06T18:28:01.860Z",
   "venue": "MetLife Stadium",
   "city": "East Rutherford, New Jersey, United States",
   "timezone": "America/New_York",
@@ -56,7 +56,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/the-rb-tour-starring-usher-raymond-east-rutherford-new-jersey-10-15-2026/event/00006494C559DCFA",
       "tickpickUrl": "https://www.tickpick.com/buy-usher-chris-brown-tickets-metlife-stadium-10-15-26-7pm/8214544/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/usher-raymond-chris-brown",
-      "priceFloorUsd": 72,
+      "priceFloorUsd": 71,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -73,7 +73,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/event/00006491C2D0E024?brand=nygiants&artistid=805985&landing=s&wt.mc_id=NFL_TEAM_NYG_SCHED_PG_HOME_5&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_TEAM_NYG&utm_content=SCHED_PG_HOME_5",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-new-orleans-saints-tickets-metlife-stadium-10-18-26-1pm/7730265/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/giants-vs-saints",
-      "priceFloorUsd": 98,
+      "priceFloorUsd": 100,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -158,7 +158,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
-      "priceFloorUsd": 80,
+      "priceFloorUsd": 82,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
