@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T18:58:54.137Z",
+  "generatedAt": "2026-10-08T18:53:59.326Z",
   "venue": "MetLife Stadium",
   "city": "East Rutherford, New Jersey, United States",
   "timezone": "America/New_York",
@@ -21,7 +21,7 @@
     "ticketmasterUrl": " https://www.ticketmaster.com/event/00006488E1990EA9?brand=jets&artistid=805987&landing=s&wt.mc",
     "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-cleveland-browns-tickets-metlife-stadium-10-11-26-1pm/7730001/",
     "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-browns",
-    "priceFloorUsd": 49,
+    "priceFloorUsd": 48,
     "priceSource": "tickpick.com",
     "source": "metlifestadium.com"
   },
@@ -39,7 +39,7 @@
       "ticketmasterUrl": " https://www.ticketmaster.com/event/00006488E1990EA9?brand=jets&artistid=805987&landing=s&wt.mc",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-cleveland-browns-tickets-metlife-stadium-10-11-26-1pm/7730001/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-browns",
-      "priceFloorUsd": 49,
+      "priceFloorUsd": 48,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -56,7 +56,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/the-rb-tour-starring-usher-raymond-east-rutherford-new-jersey-10-15-2026/event/00006494C559DCFA",
       "tickpickUrl": "https://www.tickpick.com/buy-usher-chris-brown-tickets-metlife-stadium-10-15-26-7pm/8214544/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/usher-raymond-chris-brown",
-      "priceFloorUsd": 72,
+      "priceFloorUsd": 71,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -90,7 +90,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/event/00006488E1820E3A?brand=jets&artistid=805987&landing=s&wt.mc",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-miami-dolphins-tickets-metlife-stadium-10-25-26-1pm/7729999/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-dolphins",
-      "priceFloorUsd": 66,
+      "priceFloorUsd": 65,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -107,26 +107,43 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/event/00006488E1880E4F?brand=jets&artistid=805987&landing=s&wt.mc",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-las-vegas-raiders-tickets-metlife-stadium-11-1-26-1pm/7730004/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-raiders",
-      "priceFloorUsd": 65,
+      "priceFloorUsd": 64,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
     {
+      "name": "USBands Championships - II O, III O, IV O, V O",
+      "venueListedAs": "USBands Championships - II O, III O, IV O, V O",
+      "home": "USBands Championships - II O, III O, IV O,",
+      "away": "O",
+      "kickoff": "2026-11-07T13:00:00.000Z",
+      "kickoffLocal": "2026-11-07T08:00:00-05:00",
+      "when": "Sat Nov 7, 8:00 AM",
+      "clock": "8:00 AM EST (UTC-5)",
+      "venue": "Sat Nov 7",
+      "ticketmasterUrl": "",
+      "tickpickUrl": "",
+      "detailUrl": "https://www.metlifestadium.com/events/detail/usbands-championships-ii-o-iii-o-iv-o-v-o",
+      "priceFloorUsd": null,
+      "priceSource": "",
+      "source": "metlifestadium.com"
+    },
+    {
       "name": "New York Giants vs. Washington Commanders",
-      "venueListedAs": "Giants vs. Commanders",
-      "home": "Giants",
-      "away": "Commanders",
+      "venueListedAs": "New York Giants vs. Washington Commanders",
+      "home": "New York Giants",
+      "away": "Washington Commanders",
       "kickoff": "2026-11-13T01:15:00.000Z",
       "kickoffLocal": "2026-11-12T20:15:00-05:00",
       "when": "Thu Nov 12, 8:15 PM",
       "clock": "8:15 PM EST (UTC-5)",
       "venue": "Thu Nov 12",
-      "ticketmasterUrl": "https://www.ticketmaster.com/event/00006491C2EEE050?brand=nygiants&artistid=805985&landing=s&wt.mc_id=NFL_TEAM_NYG_SCHED_PG_HOME_9&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_TEAM_NYG&utm_content=SCHED_PG_HOME_9",
+      "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-washington-commanders-tickets-metlife-stadium-11-12-26-8pm/7730261/",
-      "detailUrl": "https://www.metlifestadium.com/events/detail/giants-vs-commanders",
+      "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-washington-commanders-tickets-metlife-stadium-11-12-26-8pm/7730261/",
       "priceFloorUsd": 75,
       "priceSource": "tickpick.com",
-      "source": "metlifestadium.com"
+      "source": "tickpick.com"
     },
     {
       "name": "New York Jets vs. Buffalo Bills",
@@ -141,7 +158,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-buffalo-bills-tickets-metlife-stadium-11-15-26-1pm/7729998/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-jets-vs-buffalo-bills-tickets-metlife-stadium-11-15-26-1pm/7729998/",
-      "priceFloorUsd": 123,
+      "priceFloorUsd": 127,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
@@ -158,7 +175,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
-      "priceFloorUsd": 82,
+      "priceFloorUsd": 73,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
@@ -176,23 +193,6 @@
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-san-francisco-49ers-tickets-metlife-stadium-12-6-26-1pm/7730266/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-san-francisco-49ers-tickets-metlife-stadium-12-6-26-1pm/7730266/",
       "priceFloorUsd": 127,
-      "priceSource": "tickpick.com",
-      "source": "tickpick.com"
-    },
-    {
-      "name": "Navy Midshipmen vs. Army West Point Black Knights",
-      "venueListedAs": "Navy Midshipmen vs. Army West Point Black Knights",
-      "home": "Navy Midshipmen",
-      "away": "Army West Point Black Knights",
-      "kickoff": "2026-12-12T08:30:00.000Z",
-      "kickoffLocal": "2026-12-12T03:30:00-05:00",
-      "when": "Sat Dec 12, 3:30 AM",
-      "clock": "3:30 AM EST (UTC-5)",
-      "venue": "Sat Dec 12",
-      "ticketmasterUrl": "",
-      "tickpickUrl": "https://www.tickpick.com/buy-navy-midshipmen-vs-army-west-point-black-knights-tickets-metlife-stadium-12-12-26-3am/7636266/",
-      "detailUrl": "https://www.tickpick.com/buy-navy-midshipmen-vs-army-west-point-black-knights-tickets-metlife-stadium-12-12-26-3am/7636266/",
-      "priceFloorUsd": 308,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     }
