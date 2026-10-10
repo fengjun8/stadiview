@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T18:24:53.255Z",
+  "generatedAt": "2026-10-10T17:22:57.474Z",
   "venue": "MetLife Stadium",
   "city": "East Rutherford, New Jersey, United States",
   "timezone": "America/New_York",
@@ -21,7 +21,7 @@
     "ticketmasterUrl": " https://www.ticketmaster.com/event/00006488E1990EA9?brand=jets&artistid=805987&landing=s&wt.mc",
     "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-cleveland-browns-tickets-metlife-stadium-10-11-26-1pm/7730001/",
     "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-browns",
-    "priceFloorUsd": 44,
+    "priceFloorUsd": 41,
     "priceSource": "tickpick.com",
     "source": "metlifestadium.com"
   },
@@ -39,7 +39,7 @@
       "ticketmasterUrl": " https://www.ticketmaster.com/event/00006488E1990EA9?brand=jets&artistid=805987&landing=s&wt.mc",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-cleveland-browns-tickets-metlife-stadium-10-11-26-1pm/7730001/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/jets-vs-browns",
-      "priceFloorUsd": 44,
+      "priceFloorUsd": 41,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -56,7 +56,7 @@
       "ticketmasterUrl": "https://www.ticketmaster.com/the-rb-tour-starring-usher-raymond-east-rutherford-new-jersey-10-15-2026/event/00006494C559DCFA",
       "tickpickUrl": "https://www.tickpick.com/buy-usher-chris-brown-tickets-metlife-stadium-10-15-26-7pm/8214544/",
       "detailUrl": "https://www.metlifestadium.com/events/detail/usher-raymond-chris-brown",
-      "priceFloorUsd": 73,
+      "priceFloorUsd": 72,
       "priceSource": "tickpick.com",
       "source": "metlifestadium.com"
     },
@@ -141,7 +141,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-washington-commanders-tickets-metlife-stadium-11-12-26-8pm/7730261/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-washington-commanders-tickets-metlife-stadium-11-12-26-8pm/7730261/",
-      "priceFloorUsd": 78,
+      "priceFloorUsd": 80,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
@@ -158,7 +158,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-jets-vs-buffalo-bills-tickets-metlife-stadium-11-15-26-1pm/7729998/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-jets-vs-buffalo-bills-tickets-metlife-stadium-11-15-26-1pm/7729998/",
-      "priceFloorUsd": 137,
+      "priceFloorUsd": 131,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
@@ -175,7 +175,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-jacksonville-jaguars-tickets-metlife-stadium-11-22-26-1pm/7730264/",
-      "priceFloorUsd": 68,
+      "priceFloorUsd": 77,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     },
@@ -192,7 +192,7 @@
       "ticketmasterUrl": "",
       "tickpickUrl": "https://www.tickpick.com/buy-new-york-giants-vs-san-francisco-49ers-tickets-metlife-stadium-12-6-26-1pm/7730266/",
       "detailUrl": "https://www.tickpick.com/buy-new-york-giants-vs-san-francisco-49ers-tickets-metlife-stadium-12-6-26-1pm/7730266/",
-      "priceFloorUsd": 127,
+      "priceFloorUsd": 149,
       "priceSource": "tickpick.com",
       "source": "tickpick.com"
     }
